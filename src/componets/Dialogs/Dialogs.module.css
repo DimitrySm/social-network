@@ -1,0 +1,13 @@
+.dialogs {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dialogs__items {
+  margin-right: 50px;
+  padding: 10px 20px;
+}
+
+.messages {
+  padding: 10px 20px;
+}

@@ -1,0 +1,7 @@
+.dialog__item a {
+  text-decoration: none;
+}
+
+.dialog__item a.active {
+  color: red;
+}
