@@ -10,7 +10,6 @@ import {
 
 type PropsType = {
   dialogsPage: DialogsPageType;
-  addPost: () => void;
 };
 
 const Dialogs = (props: PropsType) => {

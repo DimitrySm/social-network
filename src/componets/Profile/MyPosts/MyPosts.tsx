@@ -1,13 +1,17 @@
 import React from "react";
-import { PostsDataType, ProfilePageType } from "../../../redux/state";
+import {
+  addPostActionCreater,
+  PostsDataType,
+  ProfilePageType,
+  updateNewPostTextActionCreater,
+} from "../../../redux/state";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 type PropsType = {
   profilePage: ProfilePageType;
   newPostText: string;
-  addPost: () => void;
-  updateNewPostText: (text: string) => void;
+  dispatch: (action: any) => void;
 };
 
 const MyPosts = (props: PropsType) => {
@@ -18,15 +22,13 @@ const MyPosts = (props: PropsType) => {
   let newPostElement = React.createRef<HTMLTextAreaElement>();
 
   let addPost = () => {
-    props.addPost();
-    props.updateNewPostText("");
+    props.dispatch(addPostActionCreater());
   };
 
   let onPostChange = () => {
     let text = newPostElement.current?.value;
-    if (text) {
-      props.updateNewPostText(text);
-    }
+    let action = updateNewPostTextActionCreater(text);
+    props.dispatch(action);
   };
 
   return (

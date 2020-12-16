@@ -9,8 +9,7 @@ import { RootStateType } from "./redux/state";
 
 type PropsType = {
   state: RootStateType;
-  addPost: () => void;
-  updateNewPostText: (text: string) => void;
+  dispatch: (action: any) => void;
 };
 
 const App = (props: PropsType) => {
@@ -25,19 +24,13 @@ const App = (props: PropsType) => {
             render={() => (
               <Profile
                 profilePage={props.state.profilePage}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
+                dispatch={props.dispatch}
               />
             )}
           />
           <Route
             path="/dialogs"
-            render={() => (
-              <Dialogs
-                dialogsPage={props.state.dialogsPage}
-                addPost={props.addPost}
-              />
-            )}
+            render={() => <Dialogs dialogsPage={props.state.dialogsPage} />}
           />
         </div>
       </div>
