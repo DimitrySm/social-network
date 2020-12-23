@@ -1,9 +1,12 @@
 import React from "react";
 import {
   addPostActionCreater,
+  updateNewPostTextActionCreater,
+} from "../../../redux/profileReducer";
+import {
+  ActionsTyps,
   PostsDataType,
   ProfilePageType,
-  updateNewPostTextActionCreater,
 } from "../../../redux/state";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
@@ -11,7 +14,7 @@ import Post from "./Post/Post";
 type PropsType = {
   profilePage: ProfilePageType;
   newPostText: string;
-  dispatch: (action: any) => void;
+  dispatch: (action: ActionsTyps) => void;
 };
 
 const MyPosts = (props: PropsType) => {
