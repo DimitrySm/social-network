@@ -5,11 +5,11 @@ import Dialogs from "./componets/Dialogs/Dialogs";
 import Header from "./componets/Header/Header";
 import Navbar from "./componets/Navbar/Navbar";
 import Profile from "./componets/Profile/Profile";
-import { StoreType } from "./redux/state";
+import { ActionsTyps, RootStateType } from "./redux/store";
 
 type PropsType = {
-  // dispatch: (action: ActionsTyps) => void;
-  store: StoreType;
+  state: RootStateType;
+  dispatch: (action: ActionsTyps) => void;
 };
 
 const App = (props: PropsType) => {
@@ -22,12 +22,20 @@ const App = (props: PropsType) => {
           path="/profile"
           render={() => (
             <Profile
-              profilePage={props.store._state.profilePage}
-              dispatch={props.store.dispatch.bind(props.store)}
+              profilePage={props.state.profilePage}
+              dispatch={props.dispatch}
             />
           )}
         />
-        <Route path="/dialogs" render={() => <Dialogs store={props.store} />} />
+        <Route
+          path="/dialogs"
+          render={() => (
+            <Dialogs
+              dialogsPage={props.state.dialogsPage}
+              dispatch={props.dispatch}
+            />
+          )}
+        />
       </div>
     </div>
   );
