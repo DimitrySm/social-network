@@ -1,8 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
-import {
-  addPostActionCreater,
-  updateNewPostTextActionCreater,
-} from "../../../redux/profileReducer";
 import {
   ActionsTyps,
   PostsDataType,
@@ -12,27 +9,29 @@ import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 type PropsType = {
-  profilePage: ProfilePageType;
+  updateNewPostText: (text: string | undefined) => void;
+  addPost: () => void;
+  postsData: Array<PostsDataType>;
   newPostText: string;
-  dispatch: (action: ActionsTyps) => void;
 };
 
 const MyPosts = (props: PropsType) => {
-  let postsElements = props.profilePage.postsData.map((p: PostsDataType) => (
+  let postsElements = props.postsData.map((p: PostsDataType) => (
     <Post message={p.message} likesCount={p.likesCount} />
   ));
 
   let newPostElement = React.createRef<HTMLTextAreaElement>();
 
-  let addPost = () => {
-    debugger;
-    props.dispatch(addPostActionCreater());
+  let onAddPost = () => {
+    props.addPost();
+    // props.dispatch(addPostActionCreater());
   };
 
   let onPostChange = () => {
     let text = newPostElement.current?.value;
-    let action = updateNewPostTextActionCreater(text);
-    props.dispatch(action);
+    // let action = updateNewPostTextActionCreater(text);
+    // props.dispatch(action);
+    props.updateNewPostText(text);
   };
 
   return (
@@ -44,7 +43,7 @@ const MyPosts = (props: PropsType) => {
           ref={newPostElement}
           value={props.newPostText}
         />
-        <button onClick={addPost}>Add post</button>
+        <button onClick={onAddPost}>Add post</button>
       </div>
       <div className={s.posts}>{postsElements}</div>
     </div>
