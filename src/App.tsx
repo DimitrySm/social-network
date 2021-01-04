@@ -5,6 +5,7 @@ import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import Header from "./componets/Header/Header";
 import Navbar from "./componets/Navbar/Navbar";
 import Profile from "./componets/Profile/Profile";
+import UsersContainer from "./componets/Users/UsersContainer";
 
 // type PropsType = {
 //   state: RootStateType;
@@ -20,6 +21,7 @@ const App = () => {
       <div className="app-wrapper-content">
         <Route path="/profile" render={() => <Profile />} />
         <Route path="/dialogs" render={() => <DialogsContainer />} />
+        <Route path="/users" render={() => <UsersContainer />} />
       </div>
     </div>
   );
