@@ -5,7 +5,7 @@ import s from "./Dialogs.module.css";
 import {
   DialogsDataType,
   DialogsPageType,
-  MessageItemType,
+  MessagesDataType,
 } from "../../redux/store";
 
 type PropsType = {
@@ -18,10 +18,10 @@ const Dialogs = (props: PropsType) => {
   let state = props.dialogsPage;
 
   let dialogsElements = state.dialogsData.map((d: DialogsDataType) => (
-    <DialogItem name={d.name} id={d.id} />
+    <DialogItem name={d.name} key={d.id} id={d.id} />
   ));
-  let messagesElements = state.messagesData.map((m: MessageItemType) => (
-    <MessageItem message={m.message} />
+  let messagesElements = state.messagesData.map((m: MessagesDataType) => (
+    <MessageItem message={m.message} key={m.id} />
   ));
 
   let newMessageBody = state.newMessageBody;
