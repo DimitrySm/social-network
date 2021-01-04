@@ -3,11 +3,11 @@ import reportWebVitals from "./reportWebVitals";
 import { rerenderEntireTree } from "./redux/render";
 import store from "./redux/redux-store";
 
-rerenderEntireTree(store.getState());
+rerenderEntireTree();
 
 store.subscribe(() => {
-  let state = store.getState();
-  rerenderEntireTree(state);
+  // let state = store.getState();
+  rerenderEntireTree();
 });
 
 // If you want to start measuring performance in your app, pass a function
