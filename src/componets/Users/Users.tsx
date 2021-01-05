@@ -1,14 +1,15 @@
 import React from "react";
+import { UserDataType } from "../../redux/usersReducer";
 import s from "./Users.module.css";
 
-// type PropsType = {
-//   users: any;
-//   follow: (userId: number) => void;
-//   unfollow: (userId: number) => void;
-//   setUsers: (users: any) => void;
-// };
+type PropsType = {
+  users: Array<UserDataType>;
+  follow: (userId: number) => void;
+  unfollow: (userId: number) => void;
+  setUsers: (users: Array<UserDataType>) => void;
+};
 
-const Users = (props: any) => {
+const Users = (props: PropsType) => {
   if (props.users.length === 0) {
     props.setUsers([
       {
