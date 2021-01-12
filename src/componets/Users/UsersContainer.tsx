@@ -7,7 +7,6 @@ import {
   unfollowAC,
   UserDataType,
 } from "../../redux/usersReducer";
-
 import Users from "./Users";
 
 let mapStateToProps = (state: RootStateType) => {
