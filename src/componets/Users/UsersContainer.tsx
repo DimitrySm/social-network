@@ -3,6 +3,8 @@ import { RootStateType } from "../../redux/store";
 import {
   ActionsTyps,
   followAC,
+  setCurentPageAC,
+  setTotalUsersCountAC,
   setUsersAC,
   unfollowAC,
   UserDataType,
@@ -12,6 +14,9 @@ import Users from "./Users";
 let mapStateToProps = (state: RootStateType) => {
   return {
     users: state.usersPage.users,
+    pageSize: state.usersPage.pageSize,
+    totalUsersCount: state.usersPage.totalUsersCount,
+    curentPage: state.usersPage.curentPage,
   };
 };
 let mapDispatchToProps = (dispatch: (action: ActionsTyps) => void) => {
@@ -24,6 +29,12 @@ let mapDispatchToProps = (dispatch: (action: ActionsTyps) => void) => {
     },
     setUsers: (users: Array<UserDataType>) => {
       dispatch(setUsersAC(users));
+    },
+    setCurrentPage: (pageNumber: number) => {
+      dispatch(setCurentPageAC(pageNumber));
+    },
+    setTotalUsersCount: (totalCount: number) => {
+      dispatch(setTotalUsersCountAC(totalCount));
     },
   };
 };

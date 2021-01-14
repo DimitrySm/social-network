@@ -9,14 +9,8 @@ let reducers = combineReducers({
   usersPage: UsersReducer,
 });
 
-// export type StoreReduxType = Store<
-//   CombinedState<{
-//     profilePage: ProfilePageType;
-//     dialogsPage: DialogsPageType;
-//   }>,
-//   ActionsTyps
-// >;
-
 let store = createStore(reducers);
+
+export type StoreReduxType = ReturnType<typeof reducers>;
 
 export default store;
