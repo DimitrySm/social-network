@@ -84,27 +84,36 @@ let mapStateToProps = (state: RootStateType) => {
     isFetching: state.usersPage.isFetching,
   };
 };
-let mapDispatchToProps = (dispatch: (action: ActionsTyps) => void) => {
-  return {
-    follow: (userId: number) => {
-      dispatch(followAC(userId));
-    },
-    unfollow: (userId: number) => {
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (users: Array<UserDataType>) => {
-      dispatch(setUsersAC(users));
-    },
-    setCurrentPage: (pageNumber: number) => {
-      dispatch(setCurentPageAC(pageNumber));
-    },
-    setTotalUsersCount: (totalCount: number) => {
-      dispatch(setTotalUsersCountAC(totalCount));
-    },
-    toggleIsFetching: (isFetching: boolean) => {
-      dispatch(toggleIsFetchingtAC(isFetching));
-    },
-  };
+// let mapDispatchToProps = (dispatch: (action: ActionsTyps) => void) => {
+//   return {
+//     follow: (userId: number) => {
+//       dispatch(followAC(userId));
+//     },
+//     unfollow: (userId: number) => {
+//       dispatch(unfollowAC(userId));
+//     },
+//     setUsers: (users: Array<UserDataType>) => {
+//       dispatch(setUsersAC(users));
+//     },
+//     setCurrentPage: (pageNumber: number) => {
+//       dispatch(setCurentPageAC(pageNumber));
+//     },
+//     setTotalUsersCount: (totalCount: number) => {
+//       dispatch(setTotalUsersCountAC(totalCount));
+//     },
+//     toggleIsFetching: (isFetching: boolean) => {
+//       dispatch(toggleIsFetchingtAC(isFetching));
+//     },
+//   };
+// };
+
+let mapDispatchToProps = {
+  follow: followAC,
+  unfollow: unfollowAC,
+  setUsers: setUsersAC,
+  setCurrentPage: setCurentPageAC,
+  setTotalUsersCount: setTotalUsersCountAC,
+  toggleIsFetching: toggleIsFetchingtAC,
 };
 
 const UsersContainer = connect(
