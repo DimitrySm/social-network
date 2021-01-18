@@ -19,4 +19,7 @@ let store = createStore(reducers);
 
 export type StoreReduxType = ReturnType<typeof reducers>;
 
+// @ts-ignore
+window.store = store;
+
 export default store;
