@@ -30,7 +30,7 @@ let Users = (props: PropsType) => {
               onClick={(e) => {
                 props.onPageChanged(p);
               }}
-              className={props.curentPage === p && s.selected}
+              className={props.curentPage === p ? s.selected : ""}
             >
               {p}
             </span>
