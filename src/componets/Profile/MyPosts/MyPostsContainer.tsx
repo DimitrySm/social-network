@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import {
+  ActionsTyps,
   addPostActionCreater,
   updateNewPostTextActionCreater,
 } from "../../../redux/profileReducer";
-import { ActionsTyps, RootStateType } from "../../../redux/store";
+import { RootStateType } from "../../../redux/redux-store";
 import MyPosts from "./MyPosts";
 
 let mapStateToProps = (state: RootStateType) => {

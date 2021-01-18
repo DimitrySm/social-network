@@ -1,7 +1,19 @@
-import { ActionsTyps, DialogsPageType } from "./store";
-
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE_NEW_MESSAGE_BODY";
 const SEND_MESSAGE = "SEND_MESSAGE";
+
+export type DialogsDataType = {
+  id: number;
+  name: string;
+};
+export type MessagesDataType = {
+  id: number;
+  message: string;
+};
+export type DialogsPageType = {
+  messagesData: Array<MessagesDataType>;
+  dialogsData: Array<DialogsDataType>;
+  newMessageBody: string;
+};
 
 let initialState = {
   messagesData: [
@@ -41,6 +53,14 @@ const dialogsReducer = (
       return state;
   }
 };
+export type ActionsTyps =
+  | sendMessageActionType
+  | updateNewMessageBodyActionType;
+
+type sendMessageActionType = ReturnType<typeof sendMessageCreater>;
+type updateNewMessageBodyActionType = ReturnType<
+  typeof updateNewMessageBodyCreater
+>;
 
 export const sendMessageCreater = () => ({ type: SEND_MESSAGE } as const);
 export const updateNewMessageBodyCreater = (body: string) =>

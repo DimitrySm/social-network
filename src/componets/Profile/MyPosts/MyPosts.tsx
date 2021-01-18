@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
-import {
-  ActionsTyps,
-  PostsDataType,
-  ProfilePageType,
-} from "../../../redux/store";
+import { PostsDataType } from "../../../redux/profileReducer";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 

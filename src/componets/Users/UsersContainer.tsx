@@ -1,9 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
-import { RootStateType } from "../../redux/store";
+import { RootStateType } from "../../redux/redux-store";
 import {
-  ActionsTyps,
   followAC,
   setCurentPageAC,
   setTotalUsersCountAC,
@@ -84,28 +83,6 @@ let mapStateToProps = (state: RootStateType) => {
     isFetching: state.usersPage.isFetching,
   };
 };
-// let mapDispatchToProps = (dispatch: (action: ActionsTyps) => void) => {
-//   return {
-//     follow: (userId: number) => {
-//       dispatch(followAC(userId));
-//     },
-//     unfollow: (userId: number) => {
-//       dispatch(unfollowAC(userId));
-//     },
-//     setUsers: (users: Array<UserDataType>) => {
-//       dispatch(setUsersAC(users));
-//     },
-//     setCurrentPage: (pageNumber: number) => {
-//       dispatch(setCurentPageAC(pageNumber));
-//     },
-//     setTotalUsersCount: (totalCount: number) => {
-//       dispatch(setTotalUsersCountAC(totalCount));
-//     },
-//     toggleIsFetching: (isFetching: boolean) => {
-//       dispatch(toggleIsFetchingtAC(isFetching));
-//     },
-//   };
-// };
 
 let mapDispatchToProps = {
   follow: followAC,

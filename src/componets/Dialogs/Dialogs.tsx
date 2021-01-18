@@ -6,7 +6,7 @@ import {
   DialogsDataType,
   DialogsPageType,
   MessagesDataType,
-} from "../../redux/store";
+} from "../../redux/dialogsReducer";
 
 type PropsType = {
   dialogsPage: DialogsPageType;

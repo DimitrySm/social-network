@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import {
+  ActionsTyps,
   sendMessageCreater,
   updateNewMessageBodyCreater,
 } from "../../redux/dialogsReducer";
-import { ActionsTyps, RootStateType } from "../../redux/store";
+import { RootStateType } from "../../redux/redux-store";
 import Dialogs from "./Dialogs";
 
 // type PropsType = {
