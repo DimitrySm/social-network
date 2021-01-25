@@ -34,7 +34,8 @@ class UsersAPIComponent extends React.Component<PropsType> {
     this.props.toggleIsFetching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.curentPage}&count=${this.props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.curentPage}&count=${this.props.pageSize}`,
+        { withCredentials: true }
       )
       .then((response) => {
         this.props.toggleIsFetching(false);
@@ -48,7 +49,8 @@ class UsersAPIComponent extends React.Component<PropsType> {
     this.props.toggleIsFetching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,
+        { withCredentials: true }
       )
       .then((response) => {
         this.props.toggleIsFetching(false);
