@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
-import Header from "./componets/Header/Header";
+import HeaderContainer from "./componets/Header/HeaderContainer";
 import Navbar from "./componets/Navbar/Navbar";
 import ProfileContainer from "./componets/Profile/ProfileContainer";
 import UsersContainer from "./componets/Users/UsersContainer";
@@ -16,7 +16,7 @@ import UsersContainer from "./componets/Users/UsersContainer";
 const App = () => {
   return (
     <div className="app-wrapper">
-      <Header />
+      <HeaderContainer />
       <Navbar />
       <div className="app-wrapper-content">
         <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
