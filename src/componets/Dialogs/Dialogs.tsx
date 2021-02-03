@@ -28,12 +28,10 @@ const Dialogs = (props: PropsType) => {
 
   let onSendMessageClick = () => {
     props.sendMessage();
-    // props.dispatch(sendMessageCreater());
   };
   let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     let body = e.currentTarget.value;
     props.updateNewMessageBodyCreater(body);
-    // props.dispatch(updateNewMessageBodyCreater(body));
   };
 
   return (

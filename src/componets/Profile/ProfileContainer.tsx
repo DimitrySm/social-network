@@ -1,8 +1,7 @@
-import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
 import { RouteComponentProps, withRouter } from "react-router-dom";
-import { setUserProfile } from "../../redux/profileReducer";
+import { getUserProfileThunkCreater } from "../../redux/profileReducer";
 import { RootStateType } from "../../redux/redux-store";
 import Profile from "./Profile";
 
@@ -18,7 +17,7 @@ type MapStatePropsType = {
   profile: any;
 };
 type MapDispatchPropsType = {
-  setUserProfile: (profile: any) => void;
+  getUserProfileThunkCreater: (userId: string) => void;
 };
 
 class ProfileContainer extends React.Component<PropsType> {
@@ -27,11 +26,7 @@ class ProfileContainer extends React.Component<PropsType> {
     if (!userId) {
       userId = "2";
     }
-    axios
-      .get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-      .then((response) => {
-        this.props.setUserProfile(response.data);
-      });
+    this.props.getUserProfileThunkCreater(userId);
   }
 
   render() {
@@ -46,7 +41,7 @@ let mapStateToProps = (state: RootStateType): MapStatePropsType => {
 };
 
 let mapDispatchToProps = {
-  setUserProfile,
+  getUserProfileThunkCreater: getUserProfileThunkCreater,
 };
 
 let WhithUrlDataContainerComponet = withRouter(ProfileContainer);

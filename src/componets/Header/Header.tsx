@@ -2,11 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 type PropsType = {
-  setAuthUserData: (
-    id: null | string,
-    email: null | string,
-    login: null | string
-  ) => void;
   login: null | string;
   isAuth: boolean;
 };
