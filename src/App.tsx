@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
 import HeaderContainer from "./componets/Header/HeaderContainer";
+import Login from "./componets/Login/Login";
 import Navbar from "./componets/Navbar/Navbar";
 import ProfileContainer from "./componets/Profile/ProfileContainer";
 import UsersContainer from "./componets/Users/UsersContainer";
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/profile/:userId?" render={() => <ProfileContainer />} />
         <Route path="/dialogs" render={() => <DialogsContainer />} />
         <Route path="/users" render={() => <UsersContainer />} />
+        <Route path="/login" render={() => <Login />} />
       </div>
     </div>
   );

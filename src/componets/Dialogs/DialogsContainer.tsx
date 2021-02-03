@@ -14,6 +14,7 @@ import Dialogs from "./Dialogs";
 let mapStateToProps = (state: RootStateType) => {
   return {
     dialogsPage: state.dialogsPage,
+    isAuth: state.auth.isAuth,
   };
 };
 let mapDispatchToProps = (dispatch: (action: ActionsTyps) => void) => {
